@@ -6,7 +6,8 @@ const sayHi = (name) => {
 }
 sayHello("John Doe");
 function sum(a, b) {
-    return a + b;
+    return a + b;1
 }   
 console.log(sum(5, 10));
+
 
