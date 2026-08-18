@@ -8,3 +8,4 @@ import {mkdir} from"fs/promises";
 
 await mkdir ("images/profile/logos",{recursive:true});
 console.log("all folder created");
+await rm ("upload")
