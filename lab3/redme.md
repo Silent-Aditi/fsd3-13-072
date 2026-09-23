@@ -109,4 +109,13 @@ one pair of curly bracket will represent only one object and its property will b
     rating: 4.5,
     review:200
 }
+for get request 
+no parameter is passed to the server when it receive all items 
+# post-->>
+to add record we pass the value from body section in json format of api tester (echo api)
+# delete-->
+to delete any parameter we pass parameter that is id of product from url
+# update-->
+we pass id from url and data to update from body.
+
 
