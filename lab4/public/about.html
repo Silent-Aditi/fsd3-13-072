@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AURA Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f4ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            900: '#1e1b4b',
+                            accent: '#06b6d4'
+                        },
+                        titanium: {
+                            natural: '#8a8d91',
+                            black: '#2d2e30',
+                            white: '#e3e4e6',
+                            blue: '#3b4856'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090a0f;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(18, 20, 29, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(9, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.25);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #090a0f;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        .timeline-line {
+            background: linear-gradient(180deg, rgba(99,102,241,0.8) 0%, rgba(6,182,212,0.8) 100%);
+        }
+    </style>
+</head>
+<body class="custom-scrollbar bg-[#090a0f] text-gray-100 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-black tracking-wider group">
+                <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-500 to-brand-accent flex items-center justify-center text-white shadow-lg shadow-brand-500/30 group-hover:scale-105 transition-transform">
+                    <i data-lucide="smartphone" class="w-5 h-5"></i>
+                </span>
+                <span class="text-gradient">AURA</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-brand-500/20 text-brand-accent border border-brand-500/30 font-semibold tracking-normal">TECHNOLOGIES</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+                <a href="#hero" class="hover:text-white transition-colors">Our Vision</a>
+                <a href="#story" class="hover:text-white transition-colors">Journey</a>
+                <a href="#values" class="hover:text-white transition-colors">Philosophy</a>
+                <a href="#innovation" class="hover:text-white transition-colors">Innovation Lab</a>
+                <a href="#team" class="hover:text-white transition-colors">Leadership</a>
+                <a href="#impact" class="hover:text-white transition-colors">Impact</a>
+            </div>
+
+            <!-- CTA Buttons & Mobile Menu Trigger -->
+            <div class="flex items-center gap-4">
+                <a href="index.html#pricing" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-brand-accent hover:opacity-90 transition-all shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5">
+                    Explore AURA X
+                </a>
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden glass-card border-t border-white/10 px-4 pt-4 pb-6 space-y-3">
+            <a href="#hero" class="block text-gray-300 hover:text-white py-2 font-medium">Our Vision</a>
+            <a href="#story" class="block text-gray-300 hover:text-white py-2 font-medium">Journey</a>
+            <a href="#values" class="block text-gray-300 hover:text-white py-2 font-medium">Philosophy</a>
+            <a href="#innovation" class="block text-gray-300 hover:text-white py-2 font-medium">Innovation Lab</a>
+            <a href="#team" class="block text-gray-300 hover:text-white py-2 font-medium">Leadership</a>
+            <a href="#impact" class="block text-gray-300 hover:text-white py-2 font-medium">Impact</a>
+            <a href="index.html#pricing" class="block w-full text-center mt-4 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-brand-accent">
+                Explore AURA X
+            </a>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden min-h-[90vh] flex items-center">
+        <!-- Ambient Glowing Background Spheres -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-brand-500/10 rounded-full blur-[150px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-brand-accent/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-brand-500/30 text-xs sm:text-sm text-brand-accent font-medium mb-8 animate-bounce">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                <span>Architecting the Next Era of Human Connection</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.08] mb-8">
+                Redefine What's <br/>
+                <span class="text-gradient">Possible.</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+                We believe technology should feel like an extension of human intent—seamless, conscious, and radically intelligent. At AURA, we engineer hardware and software in unison to unleash limitless potential.
+            </p>
+
+            <!-- Floating Tech Hologram Element Graphic -->
+            <div class="relative max-w-2xl mx-auto my-12 flex justify-center items-center">
+                <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-brand-500/20 glass-card flex items-center justify-center animate-pulse-slow relative">
+                    <div class="absolute inset-0 rounded-full border border-brand-accent/30 animate-spin-slow"></div>
+                    
+                    <!-- Floating Orbiting Badges -->
+                    <div class="absolute -top-4 glass-card px-3 py-1.5 rounded-full text-xs text-brand-accent flex items-center gap-2 border-brand-500/40 shadow-lg animate-float">
+                        <i data-lucide="cpu" class="w-3.5 h-3.5"></i> 3nm Quantum Edge
+                    </div>
+                    <div class="absolute -bottom-4 glass-card px-3 py-1.5 rounded-full text-xs text-emerald-400 flex items-center gap-2 border-emerald-500/40 shadow-lg animate-float" style="animation-delay: 1.5s;">
+                        <i data-lucide="leaf" class="w-3.5 h-3.5"></i> 100% Recycled Metal
+                    </div>
+                    <div class="absolute -left-8 glass-card px-3 py-1.5 rounded-full text-xs text-purple-300 flex items-center gap-2 border-purple-500/40 shadow-lg animate-float" style="animation-delay: 3s;">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Zero-Data Tracking
+                    </div>
+
+                    <!-- Core Symbol -->
+                    <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-gradient-to-tr from-brand-600/40 to-brand-accent/40 backdrop-blur-xl flex items-center justify-center border border-white/20 glow-effect">
+                        <i data-lucide="zap" class="w-16 h-16 text-white animate-pulse"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats Summary -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto pt-8 border-t border-white/10">
+                <div class="p-4">
+                    <p class="text-3xl sm:text-4xl font-black text-white">2021</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Founded</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-3xl sm:text-4xl font-black text-brand-accent">140+</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Global Patents</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-3xl sm:text-4xl font-black text-white">35</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Countries Active</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-3xl sm:text-4xl font-black text-emerald-400">Net 0</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Carbon Footprint Goal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Our Story / Timeline Section -->
+    <section id="story" class="py-24 bg-slate-950/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">Evolution & Vision</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white">The Journey of Innovation.</p>
+                <p class="text-gray-400 mt-4 text-base">How a team of visionary engineers set out to rewrite the smartphone rulebook.</p>
+            </div>
+
+            <!-- Interactive Timeline Layout -->
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Center Vertical Line -->
+                <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 timeline-line hidden md:block rounded-full"></div>
+
+                <div class="space-y-12 md:space-y-16">
+                    
+                    <!-- Milestone 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                            <span class="text-brand-accent font-mono font-bold text-sm px-3 py-1 rounded-full glass-card border-brand-500/30">2021 — Genesis</span>
+                            <h3 class="text-2xl font-bold text-white mt-3">The Stealth Workshop</h3>
+                            <p class="text-gray-400 text-sm mt-2 leading-relaxed">
+                                Founded in Kyoto and San Francisco by former robotics researchers and aerospace engineers driven to eliminate planned obsolescence in mobile tech.
+                            </p>
+                        </div>
+                        <div class="z-10 w-10 h-10 rounded-full bg-brand-500 border-4 border-[#090a0f] flex items-center justify-center text-white font-bold my-2 md:my-0 shadow-lg shadow-brand-500/50 group-hover:scale-125 transition-transform">
+                            <i data-lucide="flag" class="w-4 h-4"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="glass-card p-4 rounded-2xl border-white/5 opacity-80 group-hover:opacity-100 transition-opacity">
+                                <p class="text-xs text-gray-300 font-mono">"We refused to accept incremental camera upgrades as true innovation."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-center group">
+                        <div class="md:w-1/2 md:pl-12 md:text-left mb-4 md:mb-0">
+                            <span class="text-brand-accent font-mono font-bold text-sm px-3 py-1 rounded-full glass-card border-brand-500/30">2023 — Breakthrough</span>
+                            <h3 class="text-2xl font-bold text-white mt-3">The Quantum Neural Chip</h3>
+                            <p class="text-gray-400 text-sm mt-2 leading-relaxed">
+                                Unveiled our proprietary 3.2nm neural co-processor designed for offline generative AI execution, prioritizing privacy over cloud compute.
+                            </p>
+                        </div>
+                        <div class="z-10 w-10 h-10 rounded-full bg-brand-accent border-4 border-[#090a0f] flex items-center justify-center text-white font-bold my-2 md:my-0 shadow-lg shadow-brand-accent/50 group-hover:scale-125 transition-transform">
+                            <i data-lucide="cpu" class="w-4 h-4"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pr-12 md:text-right">
+                            <div class="glass-card p-4 rounded-2xl border-white/5 opacity-80 group-hover:opacity-100 transition-opacity">
+                                <p class="text-xs text-gray-300 font-mono">Achieved 38 Trillion Operations Per Second on localized silicon.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                            <span class="text-brand-accent font-mono font-bold text-sm px-3 py-1 rounded-full glass-card border-brand-500/30">2025 — Eco-Pioneer</span>
+                            <h3 class="text-2xl font-bold text-white mt-3">Grade-5 Eco Titanium</h3>
+                            <p class="text-gray-400 text-sm mt-2 leading-relaxed">
+                                Partnered with sustainable metallurgy plants to produce 100% closed-loop recycled titanium chassis without compromising structural integrity.
+                            </p>
+                        </div>
+                        <div class="z-10 w-10 h-10 rounded-full bg-emerald-500 border-4 border-[#090a0f] flex items-center justify-center text-white font-bold my-2 md:my-0 shadow-lg shadow-emerald-500/50 group-hover:scale-125 transition-transform">
+                            <i data-lucide="shield" class="w-4 h-4"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="glass-card p-4 rounded-2xl border-white/5 opacity-80 group-hover:opacity-100 transition-opacity">
+                                <p class="text-xs text-gray-300 font-mono">Eliminated 4.2 million tons of e-waste across supply partners.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-center group">
+                        <div class="md:w-1/2 md:pl-12 md:text-left mb-4 md:mb-0">
+                            <span class="text-brand-accent font-mono font-bold text-sm px-3 py-1 rounded-full glass-card border-brand-500/30">2026 — Present</span>
+                            <h3 class="text-2xl font-bold text-white mt-3">AURA Phone X Launch</h3>
+                            <p class="text-gray-400 text-sm mt-2 leading-relaxed">
+                                Introducing the world's first smartphone featuring real-time bio-photonic brightness, quad-aperture optics, and satellite edge mesh sync.
+                            </p>
+                        </div>
+                        <div class="z-10 w-10 h-10 rounded-full bg-purple-500 border-4 border-[#090a0f] flex items-center justify-center text-white font-bold my-2 md:my-0 shadow-lg shadow-purple-500/50 group-hover:scale-125 transition-transform">
+                            <i data-lucide="smartphone" class="w-4 h-4"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pr-12 md:text-right">
+                            <div class="glass-card p-4 rounded-2xl border-white/5 opacity-80 group-hover:opacity-100 transition-opacity">
+                                <p class="text-xs text-gray-300 font-mono">Awarded Tech Product of the Year across 12 countries.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Core Values / Philosophy -->
+    <section id="values" class="py-24 bg-[#090a0f] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">Our Principles</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white">Engineered with Purpose.</p>
+                <p class="text-gray-400 mt-4">Every line of code and millimeter of metal is guided by four immutable pillars.</p>
+            </div>
+
+            <!-- Bento Card Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="glass-card p-8 rounded-3xl hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-accent mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="leaf" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Sustainable Innovation</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Zero compromise on planet health. Modular components and 100% circular metals ensure our devices leave zero permanent environmental trace.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-brand-accent">
+                        <span>PILLAR 01</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-8 rounded-3xl hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="cpu" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">On-Device Intelligence</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            We bring supercomputing local. AI processing takes place on your device, not remote server farms, giving you real-time speed with total confidentiality.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-purple-400">
+                        <span>PILLAR 02</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-8 rounded-3xl hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="eye-off" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Uncompromised Privacy</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Your biometric and behavioral data never leaves your hardware lockbox. No advertising telemetry. No data monetization. Period.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-amber-400">
+                        <span>PILLAR 03</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card p-8 rounded-3xl hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="heart" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Human-Centric Design</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Technology should reduce cognitive clutter, not amplify it. AURA OS is sculpted to foster deep focus, calm interaction, and digital well-being.
+                        </p>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-cyan-400">
+                        <span>PILLAR 04</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Interactive Innovation Lab / Tech Spotlight -->
+    <section id="innovation" class="py-24 bg-gradient-to-b from-[#090a0f] via-slate-950 to-[#090a0f] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">Interactive Showcase</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white">Inside the Innovation Lab.</p>
+                <p class="text-gray-400 mt-4">Click any technology node to explore our proprietary breakthroughs.</p>
+            </div>
+
+            <!-- Tech Selector Grid & Interactive Panel -->
+            <div class="grid lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Interactive Tabs Column -->
+                <div class="lg:col-span-5 space-y-4">
+                    <button onclick="selectLabTech('quantum-glass')" id="btn-quantum-glass" class="lab-btn active w-full p-5 rounded-2xl glass-card text-left border-2 border-brand-500 transition-all flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-accent flex items-center justify-center font-bold">
+                            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Quantum Shield Glass</h4>
+                            <p class="text-xs text-gray-400 mt-0.5">Nano-crystallized shatter resistance</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-5 h-5 ml-auto text-brand-accent group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+
+                    <button onclick="selectLabTech('bionic-neural')" id="btn-bionic-neural" class="lab-btn w-full p-5 rounded-2xl glass-card text-left border-2 border-transparent hover:border-white/20 transition-all flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Bionic Neural Co-Processor</h4>
+                            <p class="text-xs text-gray-400 mt-0.5">3.2nm local generative AI engine</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-5 h-5 ml-auto text-purple-400 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+
+                    <button onclick="selectLabTech('eco-titanium')" id="btn-eco-titanium" class="lab-btn w-full p-5 rounded-2xl glass-card text-left border-2 border-transparent hover:border-white/20 transition-all flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
+                            <i data-lucide="layers" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Micro-Blasted Eco-Titanium</h4>
+                            <p class="text-xs text-gray-400 mt-0.5">Aerospace-grade recycled framework</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-5 h-5 ml-auto text-amber-400 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+
+                    <button onclick="selectLabTech('bio-display')" id="btn-bio-display" class="lab-btn w-full p-5 rounded-2xl glass-card text-left border-2 border-transparent hover:border-white/20 transition-all flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
+                            <i data-lucide="sun" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-base">Bio-Photonic OLED</h4>
+                            <p class="text-xs text-gray-400 mt-0.5">1-144Hz adaptive circadian illumination</p>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-5 h-5 ml-auto text-cyan-400 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- Display Visual Output Panel -->
+                <div class="lg:col-span-7">
+                    <div id="labDisplayPanel" class="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden min-h-[420px] flex flex-col justify-between border border-brand-500/30 glow-effect">
+                        
+                        <!-- Background Accent Graphic -->
+                        <div id="labBgGlow" class="absolute top-0 right-0 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none transition-all duration-500"></div>
+
+                        <div>
+                            <div class="flex items-center gap-3 mb-6">
+                                <span id="labBadge" class="text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-brand-500/20 text-brand-accent border border-brand-500/40">Patented Technology</span>
+                                <span class="text-xs text-gray-400 font-mono">STATUS: ACTIVE IN AURA X</span>
+                            </div>
+
+                            <h3 id="labTitle" class="text-3xl sm:text-4xl font-black text-white mb-4">Quantum Shield Glass</h3>
+                            <p id="labDesc" class="text-gray-300 text-base leading-relaxed mb-8">
+                                Engineered through a high-pressure ion-exchange process that embeds millions of optical nano-crystals into the glass matrix. Yields 6x higher scratch resistance than standard smartphone displays and zero glare under direct sunlight.
+                            </p>
+                        </div>
+
+                        <!-- Technical Specs Grid Inside Lab Card -->
+                        <div id="labMetrics" class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-white/10 text-xs font-mono">
+                            <div>
+                                <span class="text-gray-400 block">DURABILITY</span>
+                                <span id="metric1" class="text-lg font-bold text-brand-accent">10H Mohs</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block">TRANSMITTANCE</span>
+                                <span id="metric2" class="text-lg font-bold text-white">99.4% Clear</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-400 block">RECYCLABILITY</span>
+                                <span id="metric3" class="text-lg font-bold text-emerald-400">100% Grade</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Meet the Leadership / Team Section -->
+    <section id="team" class="py-24 bg-[#090a0f] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-accent mb-3">Minds Behind AURA</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white">Leadership Team.</p>
+                <p class="text-gray-400 mt-4">A diverse coalition of pioneers in software engineering, industrial design, and sustainability.</p>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Leader 1 -->
+                <div class="glass-card rounded-3xl p-6 text-center group hover:border-brand-500/50 transition-all duration-300 relative overflow-hidden">
+                    <div class="relative w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:scale-105 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80" alt="Dr. Elena Vance" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Dr. Elena Vance</h3>
+                    <p class="text-xs text-brand-accent font-semibold mt-1">Co-Founder & CEO</p>
+                    <p class="text-gray-400 text-xs mt-3 line-clamp-2">Former Director of Quantum Systems at MIT Lab. 15+ years in neural hardware design.</p>
+                    
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-center gap-3 text-gray-400">
+                        <button onclick="openBioModal('Dr. Elena Vance', 'Co-Founder & CEO', 'Former Director of Quantum Systems at MIT Lab. Elena led the development of AURA’s localized neural edge architecture and oversees global brand strategy.', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80')" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-brand-500 hover:text-white transition-colors text-white">
+                            View Bio
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Leader 2 -->
+                <div class="glass-card rounded-3xl p-6 text-center group hover:border-brand-500/50 transition-all duration-300 relative overflow-hidden">
+                    <div class="relative w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:scale-105 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80" alt="Kenji Takahashi" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Kenji Takahashi</h3>
+                    <p class="text-xs text-brand-accent font-semibold mt-1">Chief Industrial Designer</p>
+                    <p class="text-gray-400 text-xs mt-3 line-clamp-2">Pioneer in micro-blasted metals and minimalist ergonomic aesthetics based in Kyoto.</p>
+                    
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-center gap-3 text-gray-400">
+                        <button onclick="openBioModal('Kenji Takahashi', 'Chief Industrial Designer', 'Kenji previously led experimental hardware concepts in Tokyo. His design philosophy centers on stripping away artificial clutter to reveal raw metallic elegance.', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80')" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-brand-500 hover:text-white transition-colors text-white">
+                            View Bio
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Leader 3 -->
+                <div class="glass-card rounded-3xl p-6 text-center group hover:border-brand-500/50 transition-all duration-300 relative overflow-hidden">
+                    <div class="relative w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:scale-105 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80" alt="Aisha Patel" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Aisha Patel</h3>
+                    <p class="text-xs text-brand-accent font-semibold mt-1">VP of Sustainable Metallurgy</p>
+                    <p class="text-gray-400 text-xs mt-3 line-clamp-2">Environmental engineer specializing in zero-waste supply chain loops and clean energy smelting.</p>
+                    
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-center gap-3 text-gray-400">
+                        <button onclick="openBioModal('Aisha Patel', 'VP of Sustainable Metallurgy', 'Aisha spearheaded AURA’s 100% recycled Titanium program, establishing zero-emission manufacturing pipelines in Zurich and Oslo.', 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80')" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-brand-500 hover:text-white transition-colors text-white">
+                            View Bio
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Leader 4 -->
+                <div class="glass-card rounded-3xl p-6 text-center group hover:border-brand-500/50 transition-all duration-300 relative overflow-hidden">
+                    <div class="relative w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:scale-105 transition-transform">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80" alt="Marcus Thorne" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Marcus Thorne</h3>
+                    <p class="text-xs text-brand-accent font-semibold mt-1">Head of AURA OS Software</p>
+                    <p class="text-gray-400 text-xs mt-3 line-clamp-2">Veteran OS architect focused on zero-latency UI fluidity and localized data encryption.</p>
+                    
+                    <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-center gap-3 text-gray-400">
+                        <button onclick="openBioModal('Marcus Thorne', 'Head of AURA OS Software', 'Marcus believes mobile operating systems should adapt to humans, not force humans to adapt to notifications. He leads our software design team in London.', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80')" class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-brand-500 hover:text-white transition-colors text-white">
+                            View Bio
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Impact & Sustainability Meter -->
+    <section id="impact" class="py-24 bg-gradient-to-b from-[#090a0f] via-slate-950 to-[#090a0f] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-16 relative overflow-hidden border border-emerald-500/30">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Copy Column -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-semibold">
+                            <i data-lucide="leaf" class="w-4 h-4"></i>
+                            <span>Environmental & Social Responsibility</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Measurable Global Impact.</h2>
+                        <p class="text-gray-300 text-base leading-relaxed">
+                            We measure success not just in units shipped, but in tonnes of carbon diverted and ecosystems protected. Explore our live sustainability metrics.
+                        </p>
+
+                        <!-- Progress Bars -->
+                        <div class="space-y-4 pt-4">
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1 text-gray-300">
+                                    <span>Recycled Aluminum & Titanium Usage</span>
+                                    <span class="text-emerald-400 font-bold">100% Target Reached</span>
+                                </div>
+                                <div class="w-full bg-white/10 rounded-full h-2.5">
+                                    <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-2.5 rounded-full w-full"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1 text-gray-300">
+                                    <span>Renewable Energy Operations</span>
+                                    <span class="text-emerald-400 font-bold">94% Facility Power</span>
+                                </div>
+                                <div class="w-full bg-white/10 rounded-full h-2.5">
+                                    <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-2.5 rounded-full w-[94%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Counter Grid Column -->
+                    <div class="lg:col-span-6 grid grid-cols-2 gap-6">
+                        <div class="glass-card p-6 rounded-2xl border-white/10 text-center">
+                            <i data-lucide="recycle" class="w-8 h-8 text-emerald-400 mx-auto mb-3"></i>
+                            <p id="counter1" class="text-3xl sm:text-4xl font-black text-white">4,850</p>
+                            <p class="text-xs text-gray-400 mt-1 uppercase font-mono">Tonnes E-Waste Diverted</p>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-2xl border-white/10 text-center">
+                            <i data-lucide="trees" class="w-8 h-8 text-emerald-400 mx-auto mb-3"></i>
+                            <p id="counter2" class="text-3xl sm:text-4xl font-black text-white">1,200,000</p>
+                            <p class="text-xs text-gray-400 mt-1 uppercase font-mono">Trees Planted via AURA Care</p>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-2xl border-white/10 text-center">
+                            <i data-lucide="box" class="w-8 h-8 text-emerald-400 mx-auto mb-3"></i>
+                            <p id="counter3" class="text-3xl sm:text-4xl font-black text-white">0%</p>
+                            <p class="text-xs text-gray-400 mt-1 uppercase font-mono">Plastic Packaging Used</p>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-2xl border-white/10 text-center">
+                            <i data-lucide="sun" class="w-8 h-8 text-emerald-400 mx-auto mb-3"></i>
+                            <p id="counter4" class="text-3xl sm:text-4xl font-black text-white">100%</p>
+                            <p class="text-xs text-gray-400 mt-1 uppercase font-mono">Solar Smelted Metal</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050608] border-t border-white/10 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+                
+                <!-- Brand Info Column -->
+                <div class="col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 text-xl font-black text-white mb-4">
+                        <span class="w-7 h-7 rounded-lg bg-brand-500 flex items-center justify-center text-white">
+                            <i data-lucide="smartphone" class="w-4 h-4"></i>
+                        </span>
+                        <span>AURA Mobile</span>
+                    </a>
+                    <p class="text-xs text-gray-400 max-w-sm leading-relaxed mb-6">
+                        Pioneering next-generation mobile hardware and neural edge computing for human potential.
+                    </p>
+                    
+                    <!-- Newsletter Signup -->
+                    <div class="space-y-2">
+                        <p class="text-xs font-semibold text-white">Subscribe to AURA Journal</p>
+                        <form onsubmit="handleNewsletter(event)" class="flex gap-2">
+                            <input type="email" required placeholder="Enter your email" class="bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-500 flex-grow">
+                            <button type="submit" class="bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-xl text-xs font-semibold transition-colors">Join</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Column 1 -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase text-white tracking-wider mb-4">Products</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="index.html#overview" class="hover:text-white transition-colors">AURA X Pro</a></li>
+                        <li><a href="index.html#features" class="hover:text-white transition-colors">Neural Engine</a></li>
+                        <li><a href="index.html#customizer" class="hover:text-white transition-colors">Titanium Finishes</a></li>
+                        <li><a href="index.html#specs" class="hover:text-white transition-colors">Tech Specs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase text-white tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#hero" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#story" class="hover:text-white transition-colors">Our History</a></li>
+                        <li><a href="#team" class="hover:text-white transition-colors">Leadership</a></li>
+                        <li><a href="#impact" class="hover:text-white transition-colors">Sustainability</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase text-white tracking-wider mb-4">Connect</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-9 h-9 rounded-full glass-card flex items-center justify-center hover:text-white hover:border-white/30 transition-all">
+                            <i data-lucide="twitter" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full glass-card flex items-center justify-center hover:text-white hover:border-white/30 transition-all">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full glass-card flex items-center justify-center hover:text-white hover:border-white/30 transition-all">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; 2026 AURA Technologies Inc. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                    <a href="#" class="hover:text-white">Legal Notices</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bio Modal -->
+    <div id="bioModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/80 backdrop-blur-md p-4">
+        <div class="relative w-full max-w-lg glass-card rounded-3xl p-8 border border-white/20 shadow-2xl">
+            <button onclick="closeBioModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white p-1">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="flex items-center gap-4 mb-6">
+                <img id="modalImg" src="" alt="Leader" class="w-16 h-16 rounded-2xl object-cover border border-white/20">
+                <div>
+                    <h3 id="modalName" class="text-xl font-bold text-white">Leader Name</h3>
+                    <p id="modalRole" class="text-xs text-brand-accent font-semibold">Title</p>
+                </div>
+            </div>
+
+            <p id="modalBio" class="text-gray-300 text-sm leading-relaxed mb-6">Full biography description goes here...</p>
+
+            <button onclick="closeBioModal()" class="w-full py-3 rounded-xl font-semibold text-xs text-white bg-white/10 hover:bg-white/20 transition-colors">
+                Close Profile
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Lab Technology Selection Data & Logic
+        const labData = {
+            'quantum-glass': {
+                title: 'Quantum Shield Glass',
+                desc: 'Engineered through a high-pressure ion-exchange process that embeds millions of optical nano-crystals into the glass matrix. Yields 6x higher scratch resistance than standard smartphone displays and zero glare under direct sunlight.',
+                color: '#06b6d4',
+                m1: '10H Mohs',
+                m2: '99.4% Clear',
+                m3: '100% Grade'
+            },
+            'bionic-neural': {
+                title: 'Bionic Neural Co-Processor',
+                desc: 'A 3.2nm dedicated neural engine capable of executing 7 billion parameter AI models natively on-device in under 50 milliseconds, bypassing third-party cloud servers entirely.',
+                color: '#a855f7',
+                m1: '38 TOPS',
+                m2: '0ms Cloud Latency',
+                m3: '100% Offline'
+            },
+            'eco-titanium': {
+                title: 'Micro-Blasted Eco-Titanium',
+                desc: 'Constructed from aerospace-grade 5 recycled titanium, treated with a micro-pvd ceramic coating for an impenetrable armor that reduces weight by 22% compared to stainless steel.',
+                color: '#f59e0b',
+                m1: '187g Total Wt.',
+                m2: 'Grade 5 Metal',
+                m3: '0% Virgin Mining'
+            },
+            'bio-display': {
+                title: 'Bio-Photonic OLED',
+                desc: 'An adaptive LTPO 4.0 display that automatically syncs pixel color temperature with your natural circadian rhythm, decreasing blue light strain by 80% after sunset.',
+                color: '#38bdf8',
+                m1: '3000 Nits',
+                m2: '144Hz Adaptive',
+                m3: '-80% Blue Strain'
+            }
+        };
+
+        function selectLabTech(techKey) {
+            const data = labData[techKey];
+            if (!data) return;
+
+            // Reset buttons UI state
+            document.querySelectorAll('.lab-btn').forEach(btn => {
+                btn.classList.remove('border-brand-500');
+                btn.classList.add('border-transparent');
+            });
+
+            const activeBtn = document.getElementById(`btn-${techKey}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('border-transparent');
+                activeBtn.classList.add('border-brand-500');
+            }
+
+            // Update Panel content
+            document.getElementById('labTitle').innerText = data.title;
+            document.getElementById('labDesc').innerText = data.desc;
+            document.getElementById('metric1').innerText = data.m1;
+            document.getElementById('metric2').innerText = data.m2;
+            document.getElementById('metric3').innerText = data.m3;
+
+            // Update Panel Glow Color
+            document.getElementById('labBgGlow').style.backgroundColor = data.color + '20';
+        }
+
+        // Bio Modal Handler
+        function openBioModal(name, role, bio, img) {
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalRole').innerText = role;
+            document.getElementById('modalBio').innerText = bio;
+            document.getElementById('modalImg').src = img;
+            document.getElementById('bioModal').classList.remove('hidden');
+        }
+
+        function closeBioModal() {
+            document.getElementById('bioModal').classList.add('hidden');
+        }
+
+        // Custom Notification Toast
+        function showNotification(msg) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-6 right-6 z-50 glass-card p-6 rounded-2xl border border-brand-500/50 shadow-2xl max-w-sm text-left animate-bounce';
+            toast.innerHTML = `
+                <div class="flex items-start gap-3">
+                    <div class="p-2 rounded-xl bg-emerald-500/20 text-emerald-400">
+                        <i data-lucide="check-circle" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">Subscription Received!</h4>
+                        <p class="text-xs text-gray-300 mt-1">${msg}</p>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(toast);
+            lucide.createIcons();
+
+            setTimeout(() => {
+                toast.remove();
+            }, 4000);
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            showNotification("Thank you for joining the AURA Journal mailing list.");
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
