@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - EduPulse Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            accent: '#06b6d4',
+                            dark: '#0f172a'
+                        }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f17; color: #f3f4f6; }
+        .glass-card { background: rgba(18, 24, 38, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-nav { background: rgba(11, 15, 23, 0.85); backdrop-filter: blur(20px); }
+        .text-gradient { background: linear-gradient(135deg, #ffffff 0%, #34d399 50%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-[#0b0f17] text-gray-100 min-h-screen flex flex-col justify-between">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 text-2xl font-black">
+                <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-accent flex items-center justify-center text-white">
+                    <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                </span>
+                <span class="text-gradient">EduPulse</span>
+            </a>
+            <div class="hidden md:flex items-center gap-4 text-sm font-medium">
+                <a href="index.html" class="px-3 py-2 rounded-xl text-gray-300">Courses</a>
+                <a href="pricing.html" class="px-3 py-2 rounded-xl text-brand-accent font-bold">Pricing</a>
+                <a href="register.html" class="px-3 py-2 rounded-xl text-gray-300">Register</a>
+                <a href="login.html" class="px-3 py-2 rounded-xl text-gray-300">Login</a>
+                <a href="feedback.html" class="px-3 py-2 rounded-xl text-gray-300">Feedback</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-16 flex-grow max-w-7xl mx-auto px-4 w-full">
+        
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Flexible Investment</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Transparent Tuition Plans</h2>
+                <p class="text-gray-400 mt-4 text-sm sm:text-base">Choose from small cohort batches or 1-on-1 dedicated mentorship packages.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                <!-- Standard Plan -->
+                <div class="glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between hover:border-brand-500/50 transition-all">
+                    <div>
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Cohort Batch</span>
+                        <h3 class="text-2xl font-bold text-white mt-2">Group Learning</h3>
+                        <p class="text-xs text-gray-400 mt-2">Max 8 students per batch. Interactive peer dynamics.</p>
+                        <div class="mt-6 mb-6">
+                            <span class="text-4xl font-black text-white">$149</span>
+                            <span class="text-gray-400 text-xs">/ subject / month</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-gray-300 border-t border-white/10 pt-6">
+                            <li class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-4 h-4 text-brand-accent"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg> 4 Hours Live Weekly Classes</li>
+                            <li class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-4 h-4 text-brand-accent"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg> Shared Digital Blackboard Access</li>
+                            <li class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-4 h-4 text-brand-accent"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg> Weekly Doubt Resolution Room</li>
+                            <li class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-4 h-4 text-brand-accent"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg> Monthly Progress Reports</li>
+                        </ul>
+                    </div>
+                    <button onclick="navigateTo('register')" class="w-full mt-8 py-3 rounded-xl font-bold text-xs text-white bg-white/10 hover:bg-white/20 transition-colors">
+                        Select Group Plan
+                    </button>
+                </div>
+
+                <!-- Featured Plan -->
+                <div class="glass-card rounded-3xl p-8 border-2 border-brand-500 relative flex flex-col justify-between glow-effect transform md:-translate-y-2">
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-brand-500 text-white shadow-lg">
+                        Most Popular
+                    </span>
+                    <div>
+                        <span class="text-xs font-bold text-brand-accent uppercase tracking-widest">1-on-1 Mentorship</span>
+                        <h3 class="text-2xl font-bold text-white mt-2">Personal Elite</h3>
+                        <p class="text-xs text-gray-400 mt-2">100% custom pacing and dedicated faculty mentor.</p>
+                        <div class="mt-6 mb-6">
+                            <span class="text-4xl font-black text-white">$299</span>
+                            <span class="text-gray-400 text-xs">/ subject / month</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-gray-300 border-t border-white/10 pt-6">
+                            <li class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-4 h-4 text-brand-accent"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg> Dedicated 1-on-1 Live Sessions</li>
+                            <li class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-4 h-4 text-brand-accent"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg> Customized Curriculum &amp; Homework</li>
+                            <li class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-4 h-4 text-brand-accent"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg> 24/7 Chat &amp; Homework Assistance</li>
+                            <li class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-4 h-4 text-brand-accent"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg> AP/Exam Mock Testing &amp; Analytics</li>
+                        </ul>
+                    </div>
+                    <button onclick="navigateTo('register')" class="w-full mt-8 py-3 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-brand-600 to-brand-accent hover:opacity-90 transition-all shadow-lg shadow-brand-500/30">
+                        Enroll in Elite 1-on-1
+                    </button>
+                </div>
+
+                <!-- Custom Plan -->
+                <div class="glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between hover:border-brand-500/50 transition-all">
+                    <div>
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Exam Sprint</span>
+                        <h3 class="text-2xl font-bold text-white mt-2">Crash Course</h3>
+                        <p class="text-xs text-gray-400 mt-2">4-Week intensive booster before finals or SAT/AP.</p>
+                        <div class="mt-6 mb-6">
+                            <span class="text-4xl font-black text-white">$199</span>
+                            <span class="text-gray-400 text-xs">/ one-time sprint</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-gray-300 border-t border-white/10 pt-6">
+                            <li class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-4 h-4 text-brand-accent"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg> 12 Intensive Drill Seminars</li>
+                            <li class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-4 h-4 text-brand-accent"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg> Past 10-Years Paper Breakdown</li>
+                            <li class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-4 h-4 text-brand-accent"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg> Formula &amp; Cheat-sheet Kits</li>
+                            <li class="flex items-center gap-2.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check-circle-2" aria-hidden="true" class="lucide lucide-check-circle-2 w-4 h-4 text-brand-accent"><circle cx="12" cy="12" r="10"></circle><path d="m16 9-5.5 5.5L8 12"></path></svg> Strategy &amp; Time-Management Seminars</li>
+                        </ul>
+                    </div>
+                    <button onclick="navigateTo('register')" class="w-full mt-8 py-3 rounded-xl font-bold text-xs text-white bg-white/10 hover:bg-white/20 transition-colors">
+                        Join Crash Course
+                    </button>
+                </div>
+            </div>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#070a10] border-t border-white/10 text-gray-400 text-sm py-8 text-center">
+        <p>&copy; 2026 EduPulse Academy. All rights reserved.</p>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

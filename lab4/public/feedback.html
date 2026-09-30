@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Reviews - EduPulse Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            accent: '#06b6d4',
+                            dark: '#0f172a'
+                        }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f17; color: #f3f4f6; }
+        .glass-card { background: rgba(18, 24, 38, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-nav { background: rgba(11, 15, 23, 0.85); backdrop-filter: blur(20px); }
+        .text-gradient { background: linear-gradient(135deg, #ffffff 0%, #34d399 50%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-[#0b0f17] text-gray-100 min-h-screen flex flex-col justify-between">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 text-2xl font-black">
+                <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-accent flex items-center justify-center text-white">
+                    <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                </span>
+                <span class="text-gradient">EduPulse</span>
+            </a>
+            <div class="hidden md:flex items-center gap-4 text-sm font-medium">
+                <a href="index.html" class="px-3 py-2 rounded-xl text-gray-300">Courses</a>
+                <a href="pricing.html" class="px-3 py-2 rounded-xl text-gray-300">Pricing</a>
+                <a href="register.html" class="px-3 py-2 rounded-xl text-gray-300">Register</a>
+                <a href="login.html" class="px-3 py-2 rounded-xl text-gray-300">Login</a>
+                <a href="feedback.html" class="px-3 py-2 rounded-xl text-brand-accent font-bold">Feedback</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-16 flex-grow max-w-7xl mx-auto px-4 w-full">
+        
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-accent">Voices of EduPulse</span>
+                <h2 class="text-3xl font-black text-white mt-2">Student Feedback &amp; Reviews</h2>
+                <p class="text-gray-400 text-sm mt-2">We constantly refine our teaching methodologies based on direct student and parent reviews.</p>
+            </div>
+
+            <!-- Feedback Submission Form -->
+            <div class="glass-card rounded-3xl p-8 mb-12 border border-white/10">
+                <h3 class="text-lg font-bold text-white mb-4">Leave Your Review</h3>
+                <form onsubmit="handleFeedbackSubmit(event)" class="space-y-4">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <input type="text" id="fbName" required="" placeholder="Your Name" class="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-500">
+                        <input type="text" id="fbCourse" required="" placeholder="Course Attended (e.g., AP Calculus)" class="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs text-gray-400 mb-2">Rating</label>
+                        <select id="fbRating" class="bg-[#121826] border border-white/10 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-brand-500">
+                            <option value="5">⭐⭐⭐⭐⭐ (5/5) - Outstanding</option>
+                            <option value="4">⭐⭐⭐⭐ (4/5) - Very Good</option>
+                            <option value="3">⭐⭐⭐ (3/3) - Average</option>
+                        </select>
+                    </div>
+
+                    <textarea id="fbComment" required="" rows="3" placeholder="Share your experience with tutor clarity, pacing, and results..." class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-500"></textarea>
+
+                    <button type="submit" class="px-6 py-3 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-brand-600 to-brand-accent hover:opacity-90 transition-all shadow-md">
+                        Submit Feedback
+                    </button>
+                </form>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div id="feedbackList" class="grid sm:grid-cols-2 gap-6">
+                <!-- Pre-populated Feedback Card 1 -->
+                <div class="glass-card p-6 rounded-2xl border border-white/10">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-accent">Sarah M. — AP Calculus</span>
+                        <div class="text-amber-400 text-xs">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-300 text-xs leading-relaxed font-light">"Dr. Vance made integration and series convergence feel intuitive. I improved my grade from a C to an A in just 6 weeks!"</p>
+                </div>
+
+                <!-- Pre-populated Feedback Card 2 -->
+                <div class="glass-card p-6 rounded-2xl border border-white/10">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-brand-accent">David K. — Quantum Physics</span>
+                        <div class="text-amber-400 text-xs">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-300 text-xs leading-relaxed font-light">"The 1-on-1 sessions are unparalleled. The digital blackboard notes provided after every lecture saved me during finals preparation."</p>
+                </div>
+            </div>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#070a10] border-t border-white/10 text-gray-400 text-sm py-8 text-center">
+        <p>&copy; 2026 EduPulse Academy. All rights reserved.</p>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
